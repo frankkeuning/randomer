@@ -8,6 +8,7 @@ import scripts.framework.Action;
 import scripts.framework.Goal;
 import scripts.framework.Task;
 import scripts.framework.goals.SkillGoal;
+import scripts.jugs.FillAction;
 import scripts.woodcutting.ChopAction;
 
 import java.util.Stack;
@@ -44,9 +45,9 @@ public class Main extends Script {
     }
 
     private void init(){
-        Goal woodcuttingGoal = new SkillGoal(Skills.SKILLS.WOODCUTTING, 10);
-        Action woodcuttingAction = new ChopAction();
-        Task woodcuttingTask = new Task(woodcuttingAction,woodcuttingGoal);
-        taskStack.push(woodcuttingTask);
+        Goal woodcuttingGoal = new SkillGoal(Skills.SKILLS.WOODCUTTING, 99);
+        Action jugAction = new FillAction();
+        Task fillingTask = new Task(jugAction,woodcuttingGoal);
+        taskStack.push(fillingTask);
     }
 }
